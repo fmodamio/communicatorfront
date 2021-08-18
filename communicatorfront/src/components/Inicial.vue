@@ -19,4 +19,23 @@
 		<p>El jugador no debe olvidar en ningún momento que objetivo principal es entretener a los usuarios, el equipo humano no se hace responsable de los posibles cambios en la cosmovisión tras las primeras partidas, ni de los posibles paralelismos que puedan establecer con sus propias vidas, ni muchísimo menos de las metalecturas e ironías implícitas en el propio juego.</p>
 		<p>Un consejo al jugador primerizo:
 		No se confíe, ya que aquí, como en la vida, nada es lo que parece…</p>
+		<button @click="goToAbout2()">Nuevo juego </button>
+
 </template>
+
+<script>
+//import Inicial from './components/Inicial.vue'
+//import HelloWorld from './components/HelloWorld.vue'
+
+export default {
+  name: 'Inicial',
+  methods:{
+    goToAbout2(){
+   this.$router.push('/newgame'); 
+    }
+  }
+}
+
+
+
+</script>

@@ -1,20 +1,27 @@
 <template>
-    <meta charset="UTF-8">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;400&display=swap" rel="stylesheet">
-  <Inicial></Inicial>
+   <div id="app">
+  </div>
+  <router-view></router-view>
 </template>
 
 <script>
-import Inicial from './components/Inicial.vue'
+//import Inicial from './components/Inicial.vue'
+//import HelloWorld from './components/HelloWorld.vue'
 
 export default {
   name: 'App',
-  components: {
-    Inicial
+  methods:{
+   goToHome(){
+   this.$router.push('/'); 
+    },
+    goToAbout(){
+   this.$router.push('/newgame'); 
+    }
   }
 }
+
+
+
 </script>
 
 <style>
