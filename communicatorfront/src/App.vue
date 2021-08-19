@@ -5,8 +5,6 @@
 </template>
 
 <script>
-//import Inicial from './components/Inicial.vue'
-//import HelloWorld from './components/HelloWorld.vue'
 
 export default {
   name: 'App',

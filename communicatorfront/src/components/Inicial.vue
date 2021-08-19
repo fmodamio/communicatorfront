@@ -24,8 +24,6 @@
 </template>
 
 <script>
-//import Inicial from './components/Inicial.vue'
-//import HelloWorld from './components/HelloWorld.vue'
 
 export default {
   name: 'Inicial',
@@ -48,6 +46,12 @@ export default {
 	text-decoration: none;
 	display: inline-block;
 	font-size: 16px;
+	margin-right: 150px;
+	margin-left: 150px;
+	margin-top: 0px;
+	margin-bottom: 0px;
+}
+.text{
 	margin-right: 150px;
 	margin-left: 150px;
 	margin-top: 0px;
