@@ -25,8 +25,14 @@ export default {
 				nombre: this.nameplayer,
 			})
 			.then(response => {
-				console.log(response)
-				this.$router.push('/');
+				console.log(response.data.id)
+				//this.$router.push('/game');
+				this.$router.push({
+					path: '/game',
+					query: {
+						id: this.game || response.data.id
+					}
+				})
 			})
 			.catch(function (error) {
 				console.log(error)
