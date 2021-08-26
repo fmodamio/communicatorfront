@@ -1,6 +1,8 @@
 <template>
+	<Header/>
 	<div>
-		<p>Bienvenido jugador</p>
+		<p class="desk">Bienvenido jugador</p>
+		<p class="mobile">Bienvenido jugador</p>
 		<input v-model="nameplayer" placeholder="introduce tu nombre" class="text">
 		<br>
 		<br>
@@ -10,6 +12,7 @@
 </template>
 
 <script>
+import Header from './Header.vue'
 import axios from 'axios'
 
 export default {
@@ -18,6 +21,9 @@ export default {
 		return {
 			nameplayer: "",
 		};
+	},
+	components: {
+		Header,
 	},
 	methods:{
 		postPlayer(){
@@ -30,7 +36,7 @@ export default {
 			})
 			.then(response => {
 				console.log(response.data.id)
-				this.$cookies.set('id', response.data.id, "86400", '/', "", "true", "None")
+				this.$cookies.set('id', response.data.id, "86400")
 				this.$router.push('/game')
 				/*this.$router.push({
 					path: '/game',

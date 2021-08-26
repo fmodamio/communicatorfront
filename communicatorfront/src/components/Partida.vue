@@ -1,14 +1,23 @@
 <template>
-	<p>Cargando historia</p>
+	<Header/>
+	<div>
+		<p class="desk">Cargando historia</p>
+		<p class="mobile">Cargando historia</p>
+	</div>
 </template>
 
 <script>
+import Header from './Header.vue'
+
 export default {
 	name: 'Partida',
 	data() {
 		return {
 			id: "",
 		};
+	},
+	components: {
+		Header,
 	},
 	methods:{
 		getIdFromCookie(){

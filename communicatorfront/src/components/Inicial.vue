@@ -1,5 +1,5 @@
 <template>
-	<h2>COMMUNICATOR</h2>
+	<Header/>
 		<br> 
 		<p class="cita desk">Si la felicidad prevista no llega a materializarse, siempre está la posibilidad de echarle la culpa a una elección equivocada antes que a nuestra incapacidad para vivir a la altura de las oportunidades que se nos ofrecen.”</p>
 		<p class="autor desk">Zygmunt Bauman</p>
@@ -38,9 +38,13 @@
 </template>
 
 <script>
+import Header from './Header.vue'
 
 export default {
   name: 'Inicial',
+  components: {
+    Header,
+  },
   methods:{
     goToNewGame(){
    this.$router.push('/newgame'); 
