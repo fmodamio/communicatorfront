@@ -21,7 +21,7 @@ export default {
 	},
 	methods:{
 		postPlayer(){
-			axios.post('http://81.37.10.93:8000/api/player/', {
+			axios.post('http://localhost:8000/api/player/', {
 				nombre: this.nameplayer,
 				/*headers:{
 					'Access-Control-Allow-Origin': '*',
@@ -30,13 +30,14 @@ export default {
 			})
 			.then(response => {
 				console.log(response.data.id)
-				//this.$router.push('/game');
-				this.$router.push({
+				this.$cookies.set('id', response.data.id, "86400", '/', "", "true", "None")
+				this.$router.push('/game')
+				/*this.$router.push({
 					path: '/game',
 					query: {
 						id: this.game || response.data.id
 					}
-				})
+				})*/
 			})
 			.catch(function (error) {
 				console.log(error)

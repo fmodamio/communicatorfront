@@ -3,6 +3,7 @@ import { createWebHistory, createRouter } from "vue-router";
 import App from './App.vue'
 import axios from 'axios'
 import VueAxios from 'vue-axios'
+import VueCookies from 'vue3-cookies'
 
 import Inicial from './components/Inicial.vue'
 import NuevoJuego from './components/NuevoJuego.vue'
@@ -21,5 +22,6 @@ const router = createRouter({
 
 const app = createApp(App)
 app.use(VueAxios, axios)
+app.use(VueCookies)
 app.use(router)
 app.mount('#app')
