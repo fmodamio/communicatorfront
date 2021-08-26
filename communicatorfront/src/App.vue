@@ -8,14 +8,14 @@
 
 export default {
   name: 'App',
-  methods:{
+  /*methods:{
    goToHome(){
    this.$router.push('/'); 
     },
     goToAbout(){
    this.$router.push('/newgame'); 
     }
-  }
+  }*/
 }
 
 
