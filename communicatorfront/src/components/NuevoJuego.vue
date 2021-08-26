@@ -21,8 +21,12 @@ export default {
 	},
 	methods:{
 		postPlayer(){
-			axios.post('http://127.0.0.1:8000/api/player/', {
+			axios.post('http://81.37.10.93:8000/api/player/', {
 				nombre: this.nameplayer,
+				/*headers:{
+					'Access-Control-Allow-Origin': '*',
+					'Content-type': 'application/json',
+				}*/
 			})
 			.then(response => {
 				console.log(response.data.id)
