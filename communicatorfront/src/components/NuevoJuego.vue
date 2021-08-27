@@ -1,33 +1,41 @@
 <template>
 	<Header/>
-	<div>
-		<p class="desk">Bienvenido jugador</p>
-		<p class="mobile">Bienvenido jugador</p>
-		<input v-model="nameplayer" placeholder="introduce tu nombre" class="text">
+	<div v-if="show1">
+		<p>Bienvenido jugador</p>
+		<input v-model="nameplayer" placeholder="introduce tu nombre" class="text mobile" v-bind:style="{
+		textAlign:'left',
+		backgroundColor: 'white'
+		}">
 		<br>
 		<br>
 		<br>
 		<button class="button1" @click="postPlayer()">Comenzar</button>
 	</div>
+	<div v-if="show2">
+			<Partida/>
+	</div>
 </template>
 
 <script>
 import Header from './Header.vue'
+import Partida from './Partida.vue'
 import axios from 'axios'
 
 export default {
 	name: 'NuevoJuego',
 	data() {
 		return {
+			show1: true,
+			show2: false,
 			nameplayer: "",
 		};
 	},
 	components: {
-		Header,
+		Header, Partida
 	},
 	methods:{
 		postPlayer(){
-			axios.post('http://localhost:8000/api/player/', {
+			axios.post('http://192.168.1.43:8000/api/player/', {
 				nombre: this.nameplayer,
 				/*headers:{
 					'Access-Control-Allow-Origin': '*',
@@ -37,7 +45,9 @@ export default {
 			.then(response => {
 				console.log(response.data.id)
 				this.$cookies.set('id', response.data.id, "86400")
-				this.$router.push('/game')
+				//this.$router.push('/game')
+				this.show1 = false
+				this.show2 = true
 				/*this.$router.push({
 					path: '/game',
 					query: {
@@ -69,5 +79,4 @@ export default {
 	margin-top: 0px;
 	margin-bottom: 0px;
 }
-
 </style>

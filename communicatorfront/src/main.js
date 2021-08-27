@@ -9,9 +9,12 @@ import Inicial from './components/Inicial.vue'
 import NuevoJuego from './components/NuevoJuego.vue'
 import Partida from './components/Partida.vue'
 
+//import "bootstrap/dist/css/bootstrap.min.css"
+//import "bootstrap"
+
 const routes = [
   { path: '/', component: Inicial },
-  { path: '/newgame', component: NuevoJuego },
+  { path: '/juego', component: NuevoJuego },
   { path: '/game', component: Partida },
 ]
 
