@@ -1,8 +1,5 @@
 <template>
-	<div>
-		<br>
-		<br>
-		<br>
+	<div class="historia">
 		<p>Cargando historia {{idp}}</p>
 	</div>
 </template>
@@ -32,3 +29,14 @@ export default {
 }
 
 </script>
+
+<style>
+	.historia{
+		margin-top: 200px;
+	}
+	@media screen and (max-width: 768px) {
+		.historia{
+			margin-top: 200px;
+		}
+	}
+</style>

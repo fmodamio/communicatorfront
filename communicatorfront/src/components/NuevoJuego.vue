@@ -1,19 +1,17 @@
 <template>
-	<Header/>
+	<Header :npl="npl1"/>
 	<div v-if="show1">
-		<br>
-		<br>
-		<br>
-		<p>Bienvenido jugador</p>
-		<input v-model="nameplayer" placeholder="introduce tu nombre" class="text1" v-bind:style="{
+		<div class="presentacion">
+		<p>Bienvenido jugador, ¿cómo podemos dirigirnos a ti?</p>
+		<input v-model="nameplayer" placeholder="mi nombre es..." class="text1" v-bind:style="{
 		textAlign:'left', backgroundColor: 'white'}">
-		<br>
-		<br>
-		<br>
+		</div>
+		<div class="botonazul">
 		<button class="button1" @click="postPlayer()">Comenzar</button>
+		</div>
 	</div>
 	<div v-if="show2">
-			<Partida :idp="idplayer"/>
+		<Partida :idp="idplayer"/>
 	</div>
 </template>
 
@@ -29,7 +27,8 @@ export default {
 			show1: true,
 			show2: false,
 			nameplayer: "",
-			idplayer:""
+			idplayer:"",
+			npl1:""
 		};
 	},
 	components: {
@@ -54,6 +53,7 @@ export default {
 				this.show1 = false
 				this.show2 = true
 				this.idplayer = response.data.id
+				this.npl1 = "Jugador: " + this.nameplayer
 				//asi se pasaba el id del jugador como parametro get
 				/*this.$router.push({
 					path: '/game',
@@ -72,56 +72,13 @@ export default {
 </script>
 
 <style>
-.button1{
-	background-color: #008CBA;
-	border: none;
-	color: white;
-	padding: 15px 32px;
-	text-align: center;
-	text-decoration: none;
-	display: inline-block;
-	font-size: 16px;
-	margin-right: 150px;
-	margin-left: 150px;
-	margin-top: 0px;
-	margin-bottom: 0px;
-}
+	.presentacion{
+		margin-top: 300px;
+		margin-bottom: 40px;
+	}
+	.botonazul{
 
-.button2{
-	margin: 0;
-	position: absolute;
-	left: 45%;
-	background-color: transparent;
-	border: none;
-	color: aqua;
-	font-family: 'Roboto', bold;
-	padding: 15px 32px;
-	text-align: center;
-	text-decoration: none;
-	display: inline-block;
-	font-size: 25px;
-}
-
-.button3{
-	margin: 0;
-	position: absolute;
-	left: 45%;
-	background-color: transparent;
-	border: none;
-	color: grey;
-	font-family: 'Roboto', bold;
-	padding: 15px 32px;
-	text-align: center;
-	text-decoration: none;
-	display: inline-block;
-	font-size: 25px;
-}
-
-.text1{
-	margin-left: 150px;
-}
-
-@media screen and (max-width: 768px) {
+	}
 	.button1{
 		background-color: #008CBA;
 		border: none;
@@ -132,43 +89,102 @@ export default {
 		display: inline-block;
 		font-size: 16px;
 		margin-right: 150px;
-		margin-left: 10px;
+		margin-left: 150px;
 		margin-top: 0px;
 		margin-bottom: 0px;
 	}
 
 	.button2{
-		margin: 0;
+		/*margin: 0;
 		position: absolute;
-		left: 30%;
+		left: 45%;*/
 		background-color: transparent;
 		border: none;
 		color: aqua;
-		font-family: 'Roboto', bold;
-		padding: 15px 32px;
+		font-family: 'Roboto', sans-serif;
+		/*padding: 15px 32px;*/
 		text-align: center;
 		text-decoration: none;
 		display: inline-block;
 		font-size: 25px;
+		font-weight:700;
 	}
 
 	.button3{
-		margin: 0;
+		/*margin: 0;
 		position: absolute;
-		left: 30%;
+		left: 45%;*/
 		background-color: transparent;
 		border: none;
 		color: grey;
 		font-family: 'Roboto', bold;
-		padding: 15px 32px;
+		/*padding: 15px 32px;*/
 		text-align: center;
 		text-decoration: none;
 		display: inline-block;
 		font-size: 25px;
+		font-weight:700;
 	}
 
 	.text1{
-		margin-left: 10px;
+		margin-left: 150px;
 	}
-}
+
+	@media screen and (max-width: 768px) {
+		.presentacion{
+			margin-top: 200px;
+			margin-bottom: 40px;
+		}
+		.botonazul{
+			
+		}
+		.button1{
+			background-color: #008CBA;
+			border: none;
+			color: white;
+			padding: 15px 32px;
+			text-align: center;
+			text-decoration: none;
+			display: inline-block;
+			font-size: 16px;
+			margin-right: 150px;
+			margin-left: 10px;
+			margin-top: 0px;
+			margin-bottom: 0px;
+		}
+
+		.button2{
+			/*margin: 0;
+			position: absolute;
+			left: 30%;*/
+			background-color: transparent;
+			border: none;
+			color: aqua;
+			font-family: 'Roboto', bold;
+			/*padding: 15px 32px;*/
+			text-align: center;
+			text-decoration: none;
+			display: inline-block;
+			font-size: 25px;
+		}
+
+		.button3{
+			/*margin: 0;
+			position: absolute;
+			left: 30%;*/
+			background-color: transparent;
+			border: none;
+			color: grey;
+			font-family: 'Roboto', bold;
+			/*padding: 15px 32px;*/
+			text-align: center;
+			text-decoration: none;
+			display: inline-block;
+			font-size: 25px;
+		}
+
+		.text1{
+			margin-left: 10px;
+		}
+	}
 </style>
