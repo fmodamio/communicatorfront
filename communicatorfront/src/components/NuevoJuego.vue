@@ -2,16 +2,16 @@
 	<Header :npl="npl1"/>
 	<div v-if="show1">
 		<div class="presentacion">
-		<p>Bienvenido jugador, ¿cómo podemos dirigirnos a ti?</p>
-		<input v-model="nameplayer" placeholder="mi nombre es..." class="text1" v-bind:style="{
-		textAlign:'left', backgroundColor: 'white'}">
+			<p>Bienvenido jugador, ¿cómo podemos dirigirnos a ti?</p>
+			<input v-model="nameplayer" placeholder="mi nombre es..." class="text1" v-bind:style="{
+			textAlign:'left', backgroundColor: 'white'}">
 		</div>
 		<div class="botonazul">
-		<button class="button1" @click="postPlayer()">Comenzar</button>
+			<button class="button1" @click="postPlayer()">Comenzar</button>
 		</div>
 	</div>
 	<div v-if="show2">
-		<Partida :idp="idplayer"/>
+		<Partida :idp="idplayer" :history="hist" :myimage="img"/>
 	</div>
 </template>
 
@@ -28,6 +28,8 @@ export default {
 			show2: false,
 			nameplayer: "",
 			idplayer:"",
+			hist:"",
+			img:"",
 			npl1:""
 		};
 	},
@@ -54,6 +56,8 @@ export default {
 				this.show2 = true
 				this.idplayer = response.data.id
 				this.npl1 = "Jugador: " + this.nameplayer
+				this.hist = "La historia vendra de la llamada a la API"
+				this.img = "room1.jpg"
 				//asi se pasaba el id del jugador como parametro get
 				/*this.$router.push({
 					path: '/game',
@@ -124,6 +128,21 @@ export default {
 		display: inline-block;
 		font-size: 25px;
 		font-weight:700;
+	}
+
+	.button4{
+		background-color: red;
+		border: none;
+		color: white;
+		padding: 15px 32px;
+		text-align: center;
+		text-decoration: none;
+		display: inline-block;
+		font-size: 16px;
+		margin-right: 10px;
+		margin-left: 10px;
+		margin-top: 10px;
+		margin-bottom: 10px;
 	}
 
 	.text1{
