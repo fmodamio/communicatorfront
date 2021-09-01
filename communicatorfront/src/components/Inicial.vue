@@ -19,28 +19,40 @@
 		<p>El jugador no debe olvidar en ningún momento que objetivo principal es entretener a los usuarios, el equipo humano no se hace responsable de los posibles cambios en la cosmovisión tras las primeras partidas, ni de los posibles paralelismos que puedan establecer con sus propias vidas, ni muchísimo menos de las metalecturas e ironías implícitas en el propio juego.</p>
 		<p>Un consejo al jugador primerizo:
 		No se confíe, ya que aquí, como en la vida, nada es lo que parece…</p>
-		<button class="button1" @click="goToNewGame()">Nuevo juego </button>
+		<button class="button2" @click="goToNewGame()">EMPEZAR</button>
+		<br>
+		<br>
+		<button class="button2" @click="goToGoogle()">SALIR</button>
+		<br>
+		<br>
+		<button class="button3" @click="goToAbout()">ACERCA DEL JUEGO</button>
 </template>
 
 <script>
 import Header from './Header.vue'
 
 export default {
-  name: 'Inicial',
-  components: {
-    Header,
-  },
-  methods:{
-    goToNewGame(){
-   this.$router.push('/juego'); 
-    }
-  }
+	name: 'Inicial',
+	components: {
+		Header,
+	},
+	methods:{
+		goToNewGame(){
+			this.$router.push('/juego'); 
+		},
+		goToGoogle(){
+			window.location.href = "https://google.com/contact";
+		},
+		goToAbout(){
+			window.location.href = "https://geohack.toolforge.org/geohack.php?pagename=La_Libertad,_Chontales&params=12_13_N_85_10_W_region:NI_type:city(11429);"
+		}
+	}
 }
 
 </script>
 
 <style>
-.button1{
+/*.button1{
 	background-color: #008CBA;
 	border: none;
 	color: white;
@@ -59,5 +71,5 @@ export default {
 	margin-left: 150px;
 	margin-top: 0px;
 	margin-bottom: 0px;
-}
+}*/
 </style>

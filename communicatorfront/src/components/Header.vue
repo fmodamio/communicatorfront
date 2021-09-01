@@ -13,7 +13,13 @@
 		font-family: 'Roboto', sans-serif;
 		font-size: 25px;
 		background-color: #030119;
-		/*background-image: url('~@/assets/nasa2.jpg');*/
+		position: absolute;
+		left: 0px;
+		right: 0px;
+		top: 0px;
+		/*background-image: url('~@/assets/universe.jpg');
+		background-size: cover;*/
+
 	}
 
 	@media screen and (max-width: 768px) {
@@ -25,7 +31,12 @@
 			font-family: 'Roboto', sans-serif;
 			font-size: 15px;
 			background-color: #030119;
-			/*background-image: url('~@/assets/nasa2.jpg');*/
+			position: absolute;
+			left: 0px;
+			right: 0px;
+			top: 0px;
+			/*background-image: url('~@/assets/nasa2.jpg');
+			background-size: cover;*/
 		}
 	}
 </style>

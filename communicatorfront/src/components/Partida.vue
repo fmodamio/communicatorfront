@@ -1,31 +1,33 @@
 <template>
-	<!--<Header/>-->
 	<div>
-		<p>Cargando historia</p>
+		<br>
+		<br>
+		<br>
+		<p>Cargando historia {{idp}}</p>
 	</div>
 </template>
 
 <script>
-//import Header from './Header.vue'
 
 export default {
 	name: 'Partida',
+	props: ['idp'],
 	data() {
 		return {
 			id: "",
 		};
 	},
-	/*components: {
-		Header,
-	},*/
 	methods:{
 		getIdFromCookie(){
-				const id = this.$cookies.get("id")
-				console.log(id);
+			//ya no se recupera la cookie
+			/*const id = this.$cookies.get("id")
+			console.log(id);*/
 		}
 	},
 	mounted() {
+		//este metodo ya no hace nada
 		this.getIdFromCookie()
+		console.log(this.idp)
 	}
 }
 
