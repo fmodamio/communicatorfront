@@ -6,9 +6,7 @@
 			<input v-model="nameplayer" placeholder="mi nombre es..." class="text1" v-bind:style="{
 			textAlign:'left', backgroundColor: 'white'}">
 		</div>
-		<div class="botonazul">
-			<button class="button1" @click="postPlayer()">Comenzar</button>
-		</div>
+		<button class="button1" @click="postPlayer()">Comenzar</button>
 	</div>
 	<div v-if="show2">
 		<Partida :idp="idplayer" :history="hist" :myimage="img"/>
@@ -80,9 +78,6 @@ export default {
 		margin-top: 300px;
 		margin-bottom: 40px;
 	}
-	.botonazul{
-
-	}
 	.button1{
 		background-color: #008CBA;
 		border: none;
@@ -131,9 +126,9 @@ export default {
 	}
 
 	.button4{
-		background-color: red;
+		background-color: royalblue;
 		border: none;
-		color: white;
+		color: yellowgreen;
 		padding: 15px 32px;
 		text-align: center;
 		text-decoration: none;
@@ -200,6 +195,21 @@ export default {
 			text-decoration: none;
 			display: inline-block;
 			font-size: 25px;
+		}
+
+		.button4{
+			background-color: royalblue;
+			border: none;
+			color: yellowgreen;
+			/*padding: 15px 32px;*/
+			text-align: center;
+			text-decoration: none;
+			display: inline-block;
+			font-size: 10px;
+			margin-right: 10px;
+			margin-left: 10px;
+			margin-top: 10px;
+			margin-bottom: 10px;
 		}
 
 		.text1{
